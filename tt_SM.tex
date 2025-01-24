@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage{xcolor}
+\definecolor{myred}{rgb}{1,0,0} % red
+
+
+\textwidth 145mm
+\textheight 24cm
+\topmargin -0.5cm
+\evensidemargin -1.1cm
+\oddsidemargin -1.1cm 
+
+\newcommand{\minpgap}{\vspace{20mm}}
+\pagestyle{empty}
+
+\begin{document}
+
+    \unitlength = 0.1cm
+
+
+ % SM
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+  \begin{minipage}{0.180\linewidth}
+	\begin{fmffile}{qqtt_SM}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1,i2}
+	        \fmfright{o1,o2}
+	        \fmflabel{$q$}{i1}
+	        \fmflabel{$\overline{q}$}{i2}
+	        \fmflabel{\color{myred}$\overline{t}$}{o1}
+	        \fmflabel{\color{myred}$t$}{o2}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v1}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v2}
+	        \fmf{fermion}{i1,v1,i2}
+	        \fmf{fermion,f=(1,,0,,0)}{o1,v2,o2}
+	        \fmf{gluon,label=$g$}{v1,v2}			
+	    \end{fmfgraph*}
+	\end{fmffile}
+  \end{minipage}
+    \hspace{0.130\linewidth}
+ \begin{minipage}{0.180\linewidth}
+        	\begin{fmffile}{ggtt1}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1,i2}
+	        \fmfright{o1,o2}
+	        \fmflabel{$g$}{i1}
+	        \fmflabel{$g$}{i2}
+	        \fmflabel{\color{myred}$\overline{t}$}{o1}
+	        \fmflabel{\color{myred}$t$}{o2}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v1}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v2}
+	        \fmf{gluon}{i1,v1,i2}
+	        \fmf{fermion,f=(1,,0,,0)}{o1,v2,o2}
+	        \fmf{gluon,label=$g$}{v1,v2}			
+	    \end{fmfgraph*}
+	\end{fmffile}
+ \end{minipage}
+   \hspace{0.130\linewidth}
+ \begin{minipage}{0.180\linewidth}
+        	\begin{fmffile}{ggtt2}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1,i2}
+	        \fmfright{o1,o2}
+	        \fmflabel{$g$}{i1}
+	        \fmflabel{$g$}{i2}
+	        \fmflabel{\color{myred}$\overline{t}$}{o1}
+	        \fmflabel{\color{myred}$t$}{o2}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v1}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v2}
+	        \fmf{fermion,f=(1,,0,,0)}{o1,v1,v2,o2}
+	        \fmf{gluon}{v1,i1}
+                \fmf{gluon}{v2,i2}
+	        %\fmf{gluon,label=$g$}{v1,v2}			
+	    \end{fmfgraph*}
+	\end{fmffile}
+ \end{minipage}
+   \hspace{0.130\linewidth}
+  \begin{minipage}{0.180\linewidth}
+        	\begin{fmffile}{ggtt3}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1,i2}
+	        \fmfright{o1,o2}
+	        \fmflabel{$g$}{i1}
+	        \fmflabel{$g$}{i2}
+	        \fmflabel{\color{myred}$\overline{t}$}{o1}
+	        \fmflabel{\color{myred}$t$}{o2}
+                \fmf{phantom}{v1,o1}
+                \fmf{phantom}{v2,o2} % also invisible rubber band
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v1}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v2}
+	        \fmf{fermion,f=(1,,0,,0)}{v2,v1}
+                \fmf{fermion,tension=0,f=(1,,0,,0)}{o1,v2}
+                \fmf{fermion,tension=0,f=(1,,0,,0)}{v1,o2}
+	        \fmf{gluon}{v1,i1}
+                \fmf{gluon}{v2,i2}
+	        %\fmf{gluon,label=$g$}{v1,v2}			
+	    \end{fmfgraph*}
+	\end{fmffile}
+      \end{minipage}
+
+   \vspace{5mm}
+ \vspace{5mm}
+
+   
+   
+                    
+\end{document}
+        

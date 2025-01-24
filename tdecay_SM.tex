@@ -1,0 +1,52 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage{xcolor}
+\definecolor{myred}{rgb}{1,0,0} % red
+
+\textwidth 145mm
+\textheight 24cm
+\topmargin -0.5cm
+\evensidemargin -1.1cm
+\oddsidemargin -1.1cm 
+
+\newcommand{\minpgap}{\vspace{20mm}}
+\pagestyle{empty}
+
+\begin{document}
+
+    \unitlength = 0.1cm
+
+
+  \begin{minipage}{0.50\linewidth}
+	\begin{fmffile}{tdecay}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1}
+	        \fmfright{o1,o2}
+	        \fmf{fermion,f=(1,,0,,0)}{i1,v1}
+                \fmf{fermion}{v1,o1}
+	        \fmf{photon}{v1,o2}
+                \fmflabel{\color{myred}$t$}{i1}
+	        \fmflabel{$b$}{o1}
+	        \fmflabel{$W^+$}{o2}
+	        \fmflabel{$-i \frac{g}{2\sqrt{2}} V_{tb}$}{v1}
+	    \end{fmfgraph*}
+	\end{fmffile}
+  \end{minipage}
+   \begin{minipage}{0.50\linewidth}
+	\begin{fmffile}{tbardecay}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1}
+	        \fmfright{o1,o2}
+	        \fmf{fermion}{o1,v1}
+                \fmf{fermion,f=(1,,0,,0)}{v1,i1}
+	        \fmf{photon}{v1,o2}
+                \fmflabel{\color{myred}$\overline{t}$}{i1}
+	        \fmflabel{$\overline{b}$}{o1}
+	        \fmflabel{$W^-$}{o2}
+	        \fmflabel{$-i \frac{g}{2\sqrt{2}} V^*_{tb}$}{v1}
+	    \end{fmfgraph*}
+	\end{fmffile}
+  \end{minipage}
+
+\end{document}
+        

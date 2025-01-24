@@ -1,0 +1,82 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage{xcolor}
+\definecolor{myred}{rgb}{1,0,0} % red
+
+\textwidth 145mm
+\textheight 24cm
+\topmargin -0.5cm
+\evensidemargin -1.1cm
+\oddsidemargin -1.1cm 
+
+\newcommand{\minpgap}{\vspace{20mm}}
+\pagestyle{empty}
+
+
+\begin{document}
+
+    \unitlength = 0.1cm
+
+
+ % SM
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+ \begin{minipage}{0.280\linewidth}
+        	\begin{fmffile}{WbWb_2}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1,i2}
+	        \fmfright{o1,o2,o3,o4}
+	        \fmf{fermion}{i1,v1,v2,i2}
+	        \fmf{gluon,tension=1.1}{v1,v3}
+	        \fmf{gluon,tension=1.1}{v2,v4}
+                \fmf{fermion,tension=0.4}{o1,v3,v5}
+                \fmf{fermion,tension=0.4,f=(1,,0,,0),label=\color{myred}$t$}{v5,v6}
+                \fmf{fermion,tension=0.4}{v6,v4,o4}
+                \fmf{boson,tension=0.6}{v5,o2}
+                \fmf{boson,tension=0.6}{v6,o3}
+                \fmflabel{$W$}{o2}
+                \fmflabel{$W$}{o3}
+                \fmflabel{$b$}{o4}
+                \fmflabel{$\bar{b}$}{o1}
+                \fmflabel{$q$}{i1}
+	        \fmflabel{$\bar{q}$}{i2}
+	    \end{fmfgraph*}
+	\end{fmffile}
+ \end{minipage}
+   \hspace{0.130\linewidth}
+ \begin{minipage}{0.280\linewidth}
+        	\begin{fmffile}{WbWb_3}
+	    \begin{fmfgraph*}(40,25)
+	        \fmfleft{i1,i2}
+	        \fmfright{o1,o2,o3,o4}
+	        \fmflabel{$q$}{i1}
+	        \fmflabel{$\bar{q}$}{i2}
+	        %\fmflabel{$\overline{t}$}{o1}
+	        \fmflabel{$b$}{o2}
+                \fmflabel{$\bar{b}$}{o3}
+                \fmflabel{$W$}{o1}
+                \fmflabel{$W$}{o4}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v1}
+	        %\fmflabel{$i\sqrt{\alpha_S}$}{v2}
+	        \fmf{fermion,tension=2}{i1,v1,v2,v4,i2}
+	        \fmf{boson,tension=2}{v1,o1}
+                \fmf{gluon,label=$g$,tension=0.2}{v2,v3}
+		\fmf{boson,tension=2}{v4,o4}
+                \fmf{fermion,tension=0.2}{o2,v3,o3}
+                %\fmf{fermion,label=$b$,tension=0.1}{v3,o2}
+                %\fmf{fermion,label=$\bar{b}$,tension=0.1}{o3,v3}
+	        %\fmf{gluon,label=$g$}{v1,v2}			
+	    \end{fmfgraph*}
+	\end{fmffile}
+ \end{minipage}
+ 
+
+   \vspace{5mm}
+ \vspace{5mm}
+
+   
+   
+                    
+\end{document}
+        

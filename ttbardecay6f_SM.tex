@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage{feynmp}
+\usepackage{xcolor}
+\definecolor{myred}{rgb}{1,0,0} % red
+
+
+\textwidth 145mm
+\textheight 24cm
+\topmargin -0.5cm
+\evensidemargin -1.1cm
+\oddsidemargin -1.1cm 
+
+\newcommand{\minpgap}{\vspace{20mm}}
+\pagestyle{empty}
+
+\begin{document}
+
+    \unitlength = 0.1cm
+
+ \begin{minipage}{0.50\linewidth}
+	\begin{fmffile}{ttdecay6f}
+	    \begin{fmfgraph*}(120,75)
+
+	        \fmfleft{i0,i1,i2,ix,jx,j1,j2,j0}
+	        \fmfright{o0,o1,o2,p1,p2,p0}
+
+	        %\fmflabel{$\overline{t}$}{o1}
+	        %\fmflabel{$t$}{o2}
+
+	        \fmf{gluon}{i2,v1,j1}
+	        \fmf{gluon,label=$g$,tension=1.6}{v1,v2}			
+
+                \fmf{fermion}{o2,v3up}%,v2,v3down,p1}
+                \fmf{fermion}{v2,v3down}
+                \fmf{fermion}{v3down,p1}
+                
+                \fmf{fermion,f=(1,,0,,0),tension=1.88,label=\color{myred}$\overline{t}$}{v3up,v2}
+                \fmf{fermion,f=(1,,0,,0),tension=1.,label=\color{myred}$t$}{v2,v3down}
+                
+                \fmf{photon,label=$W^+$}{v4down,v3down}
+	        \fmf{photon,label=$W^-$}{v4up,v3up}
+
+                \fmf{fermion,tension=0.5}{o1,v4up,o0}
+                \fmf{fermion,tension=0.5}{p2,v4down,p0}
+
+                \fmf{phantom,tension=0.12}{i0,v4up}
+                \fmf{phantom,tension=0.12}{j0,v4down}
+
+                \fmflabel{$g$}{i2}
+	        \fmflabel{$g$}{j1}
+                
+	        \fmflabel{$b$}{p1}
+                \fmflabel{$\overline{b}$}{o2}
+
+	        \fmflabel{$q'$}{o0}
+                \fmflabel{$\overline{q}$}{o1}
+	        \fmflabel{$q'''$}{p0}
+                \fmflabel{$\overline{q}''$}{p2}
+
+
+	    \end{fmfgraph*}
+	\end{fmffile}
+  \end{minipage}
+
+
+\end{document}
+        

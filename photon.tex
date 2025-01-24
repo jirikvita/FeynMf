@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{feynmp}
+
+\begin{document}
+
+\unitlength = 1mm
+\begin{fmffile}{electron_nucleus_photon}
+
+%  \begin{fmfframe}(100,100)(20,10) % add margins around the graph
+    
+\begin{fmfgraph*}(80,50)
+
+  % Define external vertices
+  \fmfleft{i1,i2}
+  \fmfright{o1,o2}
+  \fmf{fermion,label=$e$}{i2,v1,v2,o2}
+  \fmf{photon,label=$\gamma$}{v2,o1}
+  %\fmffreeze
+  \fmf{photon,label=$\gamma$}{v1,i1}
+  % Define internal vertices for the hatched circle
+  \fmfv{decor.shape=circle,decor.filled=full,decor.size=4thick}{i1}
+  % Draw the hatched circle representing the nucleus
+  \fmfblob{.1w}{i1}
+
+  %\fmflabel{$e$}{i1}
+  %\fmflabel{$e$}{i2}
+  %\fmflabel{$\overline{t}$}{o1}
+  %\fmflabel{$t$}{o2}
+  %\fmflabel{$-ie$}{v1}
+  %\fmflabel{$-ie$}{v2}
+  
+  % Define internal vertices
+  %\fmf{fermion,label=$e^-$}{i2,v1}
+  %\fmf{fermion,label=$e^-$}{v1,v2}
+  %\fmf{photon,label=$\gamma$}{v1,v3}
+  %\fmf{fermion,label=$N$}{v3,o}
+
+
+
+\end{fmfgraph*}
+
+%\end{fmfframe}
+
+
+
+
+\end{fmffile}
+
+\end{document}
+
+
